@@ -5,22 +5,22 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collectLatest
 
 
-suspend fun main() {
-    val producer: ProfileProducer = ProfileProducer()
+//suspend fun main() {
+//    val producer: ProfileProducer = ProfileProducer()
+//
+//    // KAFKA dummy copy
+//    GlobalScope.launch {
+//        producer.state.collectLatest{ profileType ->
+//            checkAllTypes(profileType)
+//        }
+//
+//    }
+//    producer.sendMeStates()
+//
+//
+//}
 
-    // KAFKA dummy copy
-    GlobalScope.launch {
-        producer.state.collectLatest{ profileType ->
-            checkAllTypes(profileType)
-        }
-
-    }
-    producer.sendMeStates()
-
-
-}
-
-fun checkAllTypes(profileType: ProfileType) {
+fun profileConsumer(profileType: ProfileType) {
     println(profileType)
 
     when (profileType) {
