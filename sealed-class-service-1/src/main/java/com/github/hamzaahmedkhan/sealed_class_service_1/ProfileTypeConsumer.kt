@@ -33,7 +33,7 @@ fun profileConsumer(profileType: ProfileType) {
         is ProfileType.ProfileError -> {
 
         }
-        ProfileType.ProfileSuccess -> {
+        ProfileType.ProfileDeleted -> {
 
         }
     }
